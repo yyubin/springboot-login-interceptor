@@ -113,16 +113,13 @@ public class LoginController {
             return "login/loginForm";
         }
 
-        // 로그인 성공 처리 TODO
-        //세션 있으면 반환, 없으면 신규 생성
         HttpSession session = request.getSession(true);
-        // true면 세션있으면 기존 세션 반환, 없으면 생성
-        // false면 세션있으면 기존 세션 반환, 없으면 생성 안함
-        // 세션에 로그인 회원 정보 보관
         session.setAttribute(SessionConst.LOGIN_MEMBER, loginMember);
 
         return "redirect:" + redirectURL;
     }
+
+
 
 
 
